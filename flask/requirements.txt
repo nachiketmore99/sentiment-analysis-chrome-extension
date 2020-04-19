@@ -1,0 +1,16 @@
+
+beautifulsoup4==4.8.2
+
+Flask==1.1.1
+
+lxml==4.5.0
+
+numpy==1.18.1
+
+pandas==1.0.3
+
+requests==2.23.0
+
+sklearn
+
+gunicorn==19.9.0
