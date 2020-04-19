@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <style type="text/css">
+        html, body{
+            text-align: center;
+            width: 300px;
+            height: 350px;
+        }
+        .container {
+            position: relative;
+            top: 45%; left: 50%; transform: translate(-50%, -50%);
+            display: none;
+        }
+        iframe{
+            text-align: center;
+            width: 100%;
+            height: 0px;
+            border: 1px solid transparent;
+            margin: 0;
+        }
+
+        #message_button{
+            position: absolute;
+            top: 55%; left: 50%; transform: translate(-50%, -50%);
+            background-color: rgb(54, 126, 223);
+            border: 1px solid rgb(54, 126, 223);
+            width: 70%;
+        }
+        .header{
+            position: absolute;
+            height: 30%;
+            width: 100%;
+        }
+        img{
+            position: absolute;
+            width: 70%;
+            top: 50%; left: 50%; transform: translate(-50%, -50%);
+        }
+        #error-box{
+            z-index: 2;
+            height: 70%;
+            width: 70%;
+            background-color: white;
+            position: absolute;
+            top: 50%; left: 50%; transform: translate(-50%, -50%);
+            border: 1px solid white;
+            border-radius: 10px;
+        }
+        #error_button{
+            position: absolute;
+            top: 80%; left: 50%; transform: translate(-50%, -50%);
+            background-color: rgb(54, 126, 223);
+            border: 1px solid rgb(54, 126, 223);
+            width: 60%;
+        }
+        #overlay {
+            position: fixed; /* Sit on top of the page content */
+            display: none; /* Hidden by default */
+            width: 100%; /* Full width (cover the whole page) */
+            height: 100%; /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+            z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer; /* Add a pointer on hover */
+        }
+        #error-box img, span{
+            position: absolute; 
+            left: 50%; transform: translate(-50%, -50%);
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="overlay">
+        <div id="error-box">
+            <img src="error.png" style="width: 70px; top: 25%; ">
+            <span style="top: 60%; width: 100%; ">Extension is not supported on this Website</span>
+            <button type="button" class="btn btn-primary" id="error_button">Okay</button>
+        </div>
+    </div>
+
+    <div class="header"><img src="logo1.png"></div>
+    
+    <iframe src="https://chrome-heroku.herokuapp.com/" id="the_iframe" style="height: 50%;"></iframe>
+    <div class="loader" id="loader" style="display: none;"></div>
+
+    <div class="container" id="container">
+        <ul>
+            <li class="pos" id="pos"></li>
+            <li class="neg" id="neg"></li>
+            <span id="count"></span>
+        </ul>
+    </div>
+
+    <button type="button" class="btn btn-primary" id="message_button">Show Review Results</button>
+
+    <script src="popup.js"></script>
+
+</body>
+</html>
